@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- lang="es": le dice al navegador, a Google y a los lectores de pantalla que el texto está en español -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <!-- Sin esta línea, el móvil mostraría la web "en miniatura" como si fuera un ordenador -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Título y descripción: es lo que sale en la pestaña y en los resultados de Google -->
+  <title>Kryonix · Software de gestión, paneles de datos y páginas web para negocios</title>
+  <meta name="description" content="Software de gestión adaptado a tu negocio, paneles de datos para ver cómo vas de un vistazo y páginas web a tu gusto. Talleres, peluquerías, clínicas, tiendas y más.">
+
+  <!-- Iconos: el SVG para navegadores modernos, PNG como respaldo y para iPhone -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- Open Graph: lo que se ve al compartir el enlace por WhatsApp, LinkedIn... -->
+  <meta property="og:title" content="Kryonix · Software para negocios">
+  <meta property="og:description" content="Software de gestión, paneles de datos y páginas web para negocios.">
+  <meta property="og:image" content="img/logo-512.png">
+  <meta property="og:type" content="website">
+
+  <!-- Fuentes de Google. "preconnect" adelanta la conexión para que carguen antes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- "defer": el JS se descarga a la vez que el HTML, pero se ejecuta cuando el HTML ya está listo -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Enlace oculto que aparece al pulsar Tab: permite a quien navega con teclado saltarse el menú -->
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ============ CABECERA Y MENÚ ============ -->
+  <header class="cabecera">
+    <nav class="nav contenedor" aria-label="Principal">
+      <a href="#inicio" class="marca" aria-label="Kryonix, ir al inicio">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        <span class="marca__nombre">Kryoni<span class="marca__x">x</span></span>
+      </a>
+
+      <!-- Botón de menú (solo visible en móvil). aria-expanded indica si está abierto -->
+      <button class="nav__boton" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="sr-only">Abrir menú</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <ul class="nav__menu" id="menu">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#modulos">Funciones</a></li>
+        <li><a href="#demo">Paneles de datos</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#contacto" class="boton boton--oscuro">Pide una demo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section id="inicio" class="portada">
+      <div class="contenedor portada__grid">
+        <div class="portada__texto">
+          <span class="etiqueta">Software de gestión, paneles de datos y páginas web para negocios</span>
+          <!-- Solo un h1 por página: es el título principal para Google -->
+          <h1>Tu negocio, ordenado y a la vista en una sola pantalla.</h1>
+          <p class="portada__intro">Clientes, citas, trabajos, stock, proveedores y cobros en un programa moderno, adaptado a tu tipo de negocio. Paneles de datos que te dicen cómo vas de un vistazo. Y una web a tu gusto para que te encuentren.</p>
+          <div class="botones">
+            <a href="#contacto" class="boton boton--principal">Quiero probarlo</a>
+            <a href="#demo" class="boton boton--borde">Ver la demo interactiva</a>
+          </div>
+          <ul class="chips" aria-label="Sectores">
+            <li>Talleres</li><li>Peluquerías y estética</li><li>Clínicas y fisios</li><li>Tiendas</li><li>Restaurantes</li><li>Academias</li>
+          </ul>
+        </div>
+
+        <!-- Maqueta de la app hecha con HTML y CSS (no es una imagen: pesa menos y se ve nítida) -->
+        <figure class="ventana">
+          <div class="ventana__marco">
+            <div class="ventana__puntos" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="ventana__contenido">
+              <div class="ventana__cabecera">
+                <strong>Órdenes de hoy</strong>
+                <span class="ventana__producto">Kryonix Taller</span>
+              </div>
+              <div class="ventana__kpis">
+                <div><span>En taller</span><strong>7</strong></div>
+                <div><span>Listas</span><strong>3</strong></div>
+                <div class="aviso"><span>Piezas bajo mínimo</span><strong>2</strong></div>
+              </div>
+              <ul class="ordenes">
+                <li><div><strong>Seat Ibiza 1.0 TSI</strong><span>Cambio de pastillas y discos</span></div><span class="estado estado--curso">En curso</span></li>
+                <li><div><strong>Renault Clio dCi</strong><span>Revisión de 60.000 km</span></div><span class="estado estado--lista">Lista</span></li>
+                <li><div><strong>Toyota Corolla Hybrid</strong><span>Diagnosis testigo motor</span></div><span class="estado estado--espera">Esperando pieza</span></li>
+                <li><div><strong>Ford Focus</strong><span>Presupuesto embrague</span></div><span class="estado estado--presu">Presupuesto</span></li>
+              </ul>
+            </div>
+          </div>
+          <figcaption>Así es Kryonix Taller, nuestro software para talleres mecánicos. Datos de ejemplo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTOS (pestañas) ============ -->
+    <section id="productos" class="seccion">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <span class="antetitulo">Productos</span>
+          <h2>Lo que podemos hacer por tu negocio</h2>
+          <p>Elige un producto para ver qué incluye.</p>
+        </header>
+
+        <!-- Patrón "tabs" accesible: role="tablist" + role="tab" + role="tabpanel".
+             Todo el contenido está en el HTML (Google lo lee); el JS solo muestra uno y oculta el resto -->
+        <div class="pestanas" role="tablist" aria-label="Productos de Kryonix">
+          <button class="pildora" role="tab" id="tab-gestion" aria-controls="panel-gestion" aria-selected="true">Software de gestión</button>
+          <button class="pildora" role="tab" id="tab-paneles" aria-controls="panel-paneles" aria-selected="false" tabindex="-1">Paneles de datos</button>
+          <button class="pildora" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false" tabindex="-1">Páginas web</button>
+          <button class="pildora" role="tab" id="tab-medida" aria-controls="panel-medida" aria-selected="false" tabindex="-1">A medida</button>
+        </div>
+
+        <div class="producto" role="tabpanel" id="panel-gestion" aria-labelledby="tab-gestion">
+          <div class="producto__texto">
+            <h3>Software de gestión</h3>
+            <p>Un programa para el día a día de tu negocio: clientes, citas, trabajos, stock y cobros, todo en un sitio y fácil de usar.</p>
+            <p class="nota">Ya lo estamos construyendo para talleres mecánicos (Kryonix Taller) y lo adaptamos a otros tipos de negocio.</p>
+            <a href="#modulos" class="boton boton--oscuro">Ver todas las funciones</a>
+          </div>
+          <ul class="tarjetas">
+            <li><h4>Clientes y su historial</h4><p>Todo lo que has hecho con cada cliente, a un clic.</p></li>
+            <li><h4>Citas y trabajos</h4><p>Agenda, órdenes de trabajo y su estado en cada momento.</p></li>
+            <li><h4>Presupuestos</h4><p>Prepáralos en minutos y conviértelos en trabajo cuando se aceptan.</p></li>
+            <li><h4>Stock y proveedores</h4><p>Qué tienes, qué falta y dónde lo sueles comprar.</p></li>
+            <li><h4>Cobros</h4><p>Qué se ha cobrado, qué falta y quién te debe.</p></li>
+            <li><h4>Hecho para tu sector</h4><p>Solo las funciones que tu negocio necesita.</p></li>
+          </ul>
+        </div>
+
+        <div class="producto" role="tabpanel" id="panel-paneles" aria-labelledby="tab-paneles" hidden>
+          <div class="producto__texto">
+            <h3>Paneles de datos</h3>
+            <p>Paneles que resumen tu negocio en números claros y gráficas: los miras 30 segundos y sabes cómo vas.</p>
+            <p class="nota">Funcionan con nuestro software o conectados a los datos que ya tienes, por ejemplo tus hojas de cálculo.</p>
+            <a href="#demo" class="boton boton--oscuro">Probar la demo</a>
+          </div>
+          <ul class="tarjetas">
+            <li><h4>Ventas y facturación</h4><p>Cuánto facturas, qué vendes más y qué está pendiente de cobro.</p></li>
+            <li><h4>Reservas y ocupación</h4><p>Qué días y horas se llenan y cuáles se quedan vacías.</p></li>
+            <li><h4>Stock</h4><p>Qué se gasta más y qué está por debajo del mínimo.</p></li>
+            <li><h4>Clientes</h4><p>Cuántos repiten, cuántos son nuevos y quién no vuelve.</p></li>
+            <li><h4>Equipo</h4><p>Horas trabajadas y facturadas por persona.</p></li>
+            <li><h4>Alertas y comparativas</h4><p>Esta semana frente a la anterior y avisos cuando algo se tuerce.</p></li>
+          </ul>
+        </div>
+
+        <div class="producto" role="tabpanel" id="panel-web" aria-labelledby="tab-web" hidden>
+          <div class="producto__texto">
+            <h3>Páginas web</h3>
+            <p>Diseñamos y programamos la web de tu negocio a tu gusto: con tu logo, tus colores y lo que quieras enseñar. Como esta misma web.</p>
+            <p class="nota">Pago único: la web es tuya. Si quieres que nos encarguemos de mantenerla y actualizarla, hay un mantenimiento mensual opcional.</p>
+            <a href="#precios-web" class="boton boton--oscuro">Ver precios de la web</a>
+          </div>
+          <ul class="tarjetas">
+            <li><h4>Diseño a tu medida</h4><p>Partimos de tus preferencias y te enseñamos el diseño antes de programarlo.</p></li>
+            <li><h4>Perfecta en el móvil</h4><p>Se adapta a cualquier pantalla: móvil, tablet u ordenador.</p></li>
+            <li><h4>Formulario de contacto</h4><p>Tus clientes te escriben desde la web y te llega al email.</p></li>
+            <li><h4>Preparada para buscadores</h4><p>Bien estructurada para que Google entienda de qué va tu negocio.</p></li>
+            <li><h4>Dominio y publicación</h4><p>Te ayudamos con el dominio (tunegocio.es) y la dejamos publicada.</p></li>
+            <li><h4>Interactiva y rápida</h4><p>Secciones con movimiento, demos y galerías que cargan rápido.</p></li>
+          </ul>
+        </div>
+
+        <div class="producto" role="tabpanel" id="panel-medida" aria-labelledby="tab-medida" hidden>
+          <div class="producto__texto">
+            <h3>Software a medida</h3>
+            <p>¿Tienes necesidades especiales? Partimos de lo que ya hemos construido y lo adaptamos a tu forma de trabajar.</p>
+            <p class="nota">Primero escuchamos cómo trabajas; después te enseñamos un prototipo antes de construir nada.</p>
+            <a href="#contacto" class="boton boton--oscuro">Contarte mi caso</a>
+          </div>
+          <ul class="tarjetas">
+            <li><h4>Funciones nuevas</h4><p>Lo que tu negocio necesita y no encuentras en ningún programa.</p></li>
+            <li><h4>Conexión con lo que usas</h4><p>Aprovechamos tus hojas de cálculo o tu programa actual.</p></li>
+            <li><h4>Paneles a medida</h4><p>Los números exactos que quieres ver.</p></li>
+            <li><h4>Prototipo antes del desarrollo</h4><p>Ves cómo quedará antes de construirlo.</p></li>
+            <li><h4>Soporte cercano</h4><p>Hablas directamente con quien lo programa.</p></li>
+            <li><h4>Crece contigo</h4><p>Añadimos funciones cuando las necesites.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FUNCIONES / MÓDULOS ============ -->
+    <section id="modulos" class="seccion seccion--blanca">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <span class="antetitulo">Funciones</span>
+          <h2>Todo lo que puede incluir tu software</h2>
+          <p>Tu programa se monta con las piezas que necesitas, ni una más. Elige tu tipo de negocio y te marcamos las que más se usan.</p>
+        </header>
+
+        <!-- data-sector: guardamos el identificador en el HTML para que el JS lo lea -->
+        <div class="filtros" role="group" aria-label="Tipo de negocio">
+          <button class="pildora" type="button" data-sector="todos" aria-pressed="true">Todos</button>
+          <button class="pildora" type="button" data-sector="taller" aria-pressed="false">Talleres</button>
+          <button class="pildora" type="button" data-sector="estetica" aria-pressed="false">Peluquerías y estética</button>
+          <button class="pildora" type="button" data-sector="clinica" aria-pressed="false">Clínicas y fisios</button>
+          <button class="pildora" type="button" data-sector="tienda" aria-pressed="false">Tiendas</button>
+          <button class="pildora" type="button" data-sector="hosteleria" aria-pressed="false">Restaurantes y bares</button>
+          <button class="pildora" type="button" data-sector="academia" aria-pressed="false">Academias</button>
+        </div>
+
+        <!-- Cada módulo lleva en data-sectores la lista de sectores para los que se recomienda -->
+        <ul class="modulos" aria-live="polite">
+          <li class="modulo" data-sectores="taller estetica clinica tienda academia"><h3>Clientes y fichas</h3><p>Datos de contacto e historial de cada cliente.</p></li>
+          <li class="modulo" data-sectores="estetica clinica hosteleria academia"><h3>Citas y reservas</h3><p>Agenda por día y por persona, sin solapes.</p></li>
+          <li class="modulo" data-sectores="taller"><h3>Órdenes de trabajo</h3><p>Cada trabajo con su estado, tareas y materiales.</p></li>
+          <li class="modulo" data-sectores="taller tienda"><h3>Presupuestos</h3><p>Crea, envía y convierte en trabajo cuando se aceptan.</p></li>
+          <li class="modulo" data-sectores="taller estetica tienda hosteleria"><h3>Inventario y stock</h3><p>Existencias, mínimos y avisos cuando algo se acaba.</p></li>
+          <li class="modulo" data-sectores="taller tienda hosteleria"><h3>Proveedores y pedidos</h3><p>Dónde compras cada cosa y qué está pendiente de llegar.</p></li>
+          <li class="modulo" data-sectores="taller estetica clinica tienda academia"><h3>Cobros y deudores</h3><p>Pagos, cobros parciales y quién te debe dinero.</p></li>
+          <li class="modulo" data-sectores="taller estetica clinica academia"><h3>Recordatorios a clientes</h3><p>Avisos de citas, revisiones o renovaciones.</p></li>
+          <li class="modulo" data-sectores="taller estetica clinica hosteleria"><h3>Equipo y horarios</h3><p>Quién hace cada trabajo y cuántas horas dedica.</p></li>
+          <li class="modulo" data-sectores="taller estetica clinica tienda hosteleria academia"><h3>Exportación para el gestor</h3><p>Descarga tus datos en CSV para la gestoría.</p></li>
+          <li class="modulo" data-sectores="taller estetica clinica tienda hosteleria academia"><h3>Paneles de datos</h3><p>Tus números clave y gráficas, siempre al día.</p></li>
+          <li class="modulo" data-sectores="taller estetica clinica tienda hosteleria academia"><h3>Copias de seguridad</h3><p>Copias automáticas y cifradas de tus datos.</p></li>
+          <li class="modulo modulo--proximamente" data-sectores="taller estetica clinica tienda academia"><h3>Facturación</h3><p>Genera la factura cuando el trabajo esté listo.</p></li>
+          <li class="modulo modulo--proximamente" data-sectores="taller clinica"><h3>Fotos y documentos</h3><p>Adjunta fotos o archivos a cada cliente o trabajo.</p></li>
+          <li class="modulo modulo--proximamente" data-sectores="taller estetica clinica tienda hosteleria academia"><h3>App móvil</h3><p>Consulta y actualiza desde el móvil.</p></li>
+        </ul>
+        <p class="pie-seccion">¿Echas algo en falta? Lo construimos para ti en el plan a medida.</p>
+      </div>
+    </section>
+
+    <!-- ============ DEMO DE PANELES ============ -->
+    <section id="demo" class="seccion seccion--oscura">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <span class="antetitulo">Demo en vivo · Paneles de datos</span>
+          <h2>Un panel para cada pregunta de tu negocio</h2>
+          <p>Elige un panel y un periodo, y mira cómo cambia. Los números son de ejemplo; en tu panel salen de tus propios datos.</p>
+        </header>
+
+        <div class="demo__controles">
+          <!-- Los botones de panel los rellena el JS a partir de los datos (así no repetimos información) -->
+          <div class="demo__paneles" role="group" aria-label="Tipo de panel" id="demo-paneles"></div>
+          <div class="segmentado" role="group" aria-label="Periodo">
+            <button type="button" data-periodo="semana" aria-pressed="true">Esta semana</button>
+            <button type="button" data-periodo="mes" aria-pressed="false">Este mes</button>
+          </div>
+        </div>
+
+        <!-- aria-live="polite": los lectores de pantalla anuncian los cambios sin interrumpir -->
+        <div class="demo" aria-live="polite">
+          <p class="demo__pregunta" id="demo-pregunta"></p>
+          <div class="kpis" id="demo-kpis"></div>
+          <div class="demo__fila">
+            <div class="caja caja--grafica">
+              <div class="caja__titulo"><h3 id="demo-grafica-titulo"></h3><span>Pasa el ratón por las barras</span></div>
+              <div class="grafica" id="demo-grafica"></div>
+            </div>
+            <div class="caja caja--lista">
+              <h3 id="demo-lista-titulo"></h3>
+              <ul class="ranking" id="demo-lista"></ul>
+              <p class="alerta" id="demo-aviso"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Si alguien tiene el JS desactivado, al menos sabe qué está pasando -->
+        <noscript><p>Activa JavaScript para ver la demo interactiva.</p></noscript>
+        <p class="pie-seccion">Estos son solo algunos ejemplos: diseñamos contigo los paneles con los números que de verdad usas.</p>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO TRABAJAMOS ============ -->
+    <section id="como" class="seccion">
+      <div class="contenedor">
+        <header class="seccion__cabecera">
+          <span class="antetitulo">Cómo trabajamos</span>
+          <h2>Hecho a partir de cómo trabajas tú</h2>
+          <p>Antes de programar, vamos a tu negocio y vemos cómo trabajáis de verdad. Así el programa se adapta a ti, y no al revés.</p>
+        </header>
+        <!-- <ol> porque los pasos tienen un orden -->
+        <ol class="pasos">
+          <li><span class="pasos__num" aria-hidden="true">1</span><h3>Te visitamos</h3><p>Vemos cómo trabajáis en el día a día y qué os hace perder tiempo.</p></li>
+          <li><span class="pasos__num" aria-hidden="true">2</span><h3>Prototipo</h3><p>Te enseñamos cómo quedaría antes de construirlo, y lo ajustamos contigo.</p></li>
+          <li><span class="pasos__num" aria-hidden="true">3</span><h3>Prueba real</h3><p>Lo usas en tu negocio con tus datos durante un periodo de prueba.</p></li>
+          <li><span class="pasos__num" aria-hidden="true">4</span><h3>Soporte y mejoras</h3><p>Seguimos a tu lado: dudas, copias de seguridad y nuevas funciones.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PRECIOS ============ -->
+    <section id="precios" class="seccion seccion--blanca">
+      <div class="contenedor">
+        <div class="precios__cabecera">
+          <header class="seccion__cabecera">
+            <span class="antetitulo">Precios</span>
+            <h2>Planes claros, sin letra pequeña</h2>
+            <p>Software y paneles: paga mes a mes o de forma anual y ahórrate 2 meses al año. Las páginas web se pagan una sola vez.</p>
+          </header>
+          <div class="segmentado segmentado--claro" role="group" aria-label="Forma de pago">
+            <button type="button" data-ciclo="mensual" aria-pressed="true">Mensual</button>
+            <button type="button" data-ciclo="anual" aria-pressed="false">Anual <span class="insignia">2 meses gratis</span></button>
+          </div>
+        </div>
+
+        <!-- Cada precio tiene dos versiones en data-mensual y data-anual; el JS cambia el texto -->
+        <div class="planes">
+          <article class="plan">
+            <h3>Software</h3>
+            <p class="plan__para">Tu programa de gestión, con las funciones de tu sector.</p>
+            <p class="plan__precio" data-mensual="[PRECIO] €/mes" data-anual="[PRECIO] €/año">[PRECIO] €/mes</p>
+            <p class="plan__nota" data-mensual="Sin permanencia" data-anual="Te ahorras 2 meses frente al pago mensual">Sin permanencia</p>
+            <ul class="lista-check">
+              <li>Clientes, citas, trabajos, stock y cobros</li>
+              <li>Adaptado a tu tipo de negocio</li>
+              <li>Copias de seguridad automáticas</li>
+              <li>Actualizaciones y soporte incluidos</li>
+            </ul>
+            <a href="#contacto" class="boton boton--borde">Empezar</a>
+          </article>
+
+          <article class="plan">
+            <h3>Paneles</h3>
+            <p class="plan__para">Tus números a la vista, uses el programa que uses.</p>
+            <p class="plan__precio" data-mensual="[PRECIO] €/mes" data-anual="[PRECIO] €/año">[PRECIO] €/mes</p>
+            <p class="plan__nota" data-mensual="Sin permanencia" data-anual="Te ahorras 2 meses frente al pago mensual">Sin permanencia</p>
+            <ul class="lista-check">
+              <li>Paneles con tus indicadores clave</li>
+              <li>Conectados a tus datos (hojas de cálculo u otro programa)</li>
+              <li>Comparativas y alertas</li>
+              <li>Desde el ordenador o el móvil</li>
+            </ul>
+            <a href="#contacto" class="boton boton--borde">Quiero mis paneles</a>
+          </article>
+
+          <article class="plan plan--destacado">
+            <span class="insignia">Recomendado</span>
+            <h3>Pro</h3>
+            <p class="plan__para">El software y los paneles juntos, conectados entre sí.</p>
+            <p class="plan__precio" data-mensual="[PRECIO] €/mes" data-anual="[PRECIO] €/año">[PRECIO] €/mes</p>
+            <p class="plan__nota" data-mensual="Sin permanencia" data-anual="Te ahorras 2 meses frente al pago mensual">Sin permanencia</p>
+            <ul class="lista-check">
+              <li>Todo lo del plan Software</li>
+              <li>Todo lo del plan Paneles</li>
+              <li>Paneles alimentados por tu software, sin configurar nada</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#contacto" class="boton boton--principal">Quiero el Pro</a>
+          </article>
+
+          <article class="plan">
+            <h3>A medida</h3>
+            <p class="plan__para">Para peticiones especiales o negocios con necesidades únicas.</p>
+            <p class="plan__precio">Presupuesto</p>
+            <p class="plan__nota">Según lo que necesites</p>
+            <ul class="lista-check">
+              <li>Análisis de tu negocio</li>
+              <li>Prototipo antes de construir</li>
+              <li>Funciones y paneles hechos para ti</li>
+              <li>Soporte directo con quien lo programa</li>
+            </ul>
+            <a href="#contacto" class="boton boton--borde">Hablar con nosotros</a>
+          </article>
+        </div>
+
+        <!-- Páginas web: bloque aparte porque se pagan de otra forma (pago único) -->
+        <div id="precios-web" class="web-precio">
+          <div class="web-precio__intro">
+            <span class="insignia insignia--oscura">Pago único</span>
+            <h3>Páginas web</h3>
+            <p>Tu web, diseñada a tu gusto. La pagas una vez y es tuya. Si no quieres preocuparte de nada, añade el mantenimiento.</p>
+            <a href="#contacto" class="boton boton--oscuro">Pedir presupuesto de web</a>
+          </div>
+          <div class="web-precio__caja">
+            <h4>Creación de la web</h4>
+            <p class="plan__precio">Desde [PRECIO] €</p>
+            <p class="plan__nota">Un solo pago, sin cuotas</p>
+            <ul class="lista-check">
+              <li>Diseño a tu gusto, con tu logo y tus colores</li>
+              <li>Adaptada a móvil, tablet y ordenador</li>
+              <li>Formulario de contacto</li>
+              <li>Publicación y ayuda con el dominio</li>
+            </ul>
+          </div>
+          <div class="web-precio__caja web-precio__caja--opcional">
+            <h4>Mantenimiento <span class="insignia insignia--gris">Opcional</span></h4>
+            <p class="plan__precio">[PRECIO] €/mes</p>
+            <p class="plan__nota">Sin permanencia. Lo quitas cuando quieras.</p>
+            <ul class="lista-check">
+              <li>Cambios de textos, fotos, horarios y precios</li>
+              <li>Actualizaciones y copias de seguridad</li>
+              <li>Vigilamos que la web siga funcionando</li>
+              <li>Soporte directo con quien la hizo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREGUNTAS FRECUENTES ============ -->
+    <!-- <details> y <summary> son un acordeón nativo de HTML: funciona sin JS y es accesible -->
+    <section id="faq" class="seccion">
+      <div class="contenedor contenedor--estrecho">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details open>
+            <summary>¿Sirve para mi tipo de negocio?</summary>
+            <p>Empezamos con talleres mecánicos y adaptamos el software a otros sectores: peluquerías, clínicas, tiendas, restaurantes, academias… Cuéntanos tu caso y te decimos qué funciones encajan.</p>
+          </details>
+          <details>
+            <summary>¿Necesito instalar algo?</summary>
+            <p>No. Funciona desde el navegador, en el ordenador de tu negocio o en cualquier otro dispositivo con internet.</p>
+          </details>
+          <details>
+            <summary>¿Puedo tener solo los paneles de datos, sin cambiar de programa?</summary>
+            <p>Sí. El plan Paneles se conecta a los datos que ya tienes, como tus hojas de cálculo o lo que exporte tu programa actual.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa con mis datos?</summary>
+            <p>Tus datos son tuyos. Hacemos copias de seguridad cifradas y, si algún día te vas, te los llevas.</p>
+          </details>
+          <details>
+            <summary>¿Puedo probarlo antes de pagar?</summary>
+            <p>Sí. Te preparamos una demo y un periodo de prueba en tu propio negocio.</p>
+          </details>
+          <details>
+            <summary>¿Puedo pasar de mensual a anual más adelante?</summary>
+            <p>Sí, puedes cambiar cuando quieras y empezar a ahorrar desde ese momento.</p>
+          </details>
+          <details>
+            <summary>Si os encargo una web, ¿tengo que pagar todos los meses?</summary>
+            <p>No. La web se paga una sola vez y es tuya. El mantenimiento mensual es opcional: solo si quieres que nos ocupemos de los cambios, las actualizaciones y de que siga funcionando.</p>
+          </details>
+          <details>
+            <summary>¿Puedo pedir cambios en la web después?</summary>
+            <p>Sí. Con el mantenimiento, los cambios pequeños (textos, fotos, horarios, precios) están incluidos. Sin mantenimiento, te hacemos presupuesto de cada cambio.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section id="contacto" class="seccion seccion--blanca">
+      <div class="contenedor contacto">
+        <div class="contacto__texto">
+          <span class="antetitulo">Contacto</span>
+          <h2>¿Te enseñamos cómo quedaría en tu negocio?</h2>
+          <p>Cuéntanos qué negocio tienes y te preparamos una demo con un ejemplo parecido al tuyo. Sin compromiso.</p>
+          <p><strong>Email:</strong> <a href="mailto:equipo.kryonix@gmail.com">equipo.kryonix@gmail.com</a></p>
+          <p><strong>Teléfono / WhatsApp:</strong></p>
+          <p>Sergio: <a href="https://wa.me/34722424912">722 424 912</a></p>
+          <p>Adri: <a href="https://wa.me/34649871116">649 871 116</a></p>
+        </div>
+
+        <!-- action: la dirección de Formspree a la que se envían los datos (hay que crear la cuenta).
+             Si el JS falla, el formulario se envía igual de forma normal: eso se llama "mejora progresiva" -->
+        <form class="formulario" id="formulario" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+          <div class="formulario__fila">
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+            </div>
+            <div class="campo">
+              <label for="negocio">Tipo de negocio</label>
+              <input id="negocio" name="negocio" type="text" placeholder="Taller, peluquería, clínica…">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="contacto-dato">Email o teléfono</label>
+            <input id="contacto-dato" name="contacto" type="text" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="interes">¿Qué te interesa?</label>
+            <select id="interes" name="interes">
+              <option>Software de gestión</option>
+              <option>Paneles de datos</option>
+              <option>Plan Pro (software + paneles)</option>
+              <option>Página web</option>
+              <option>Algo a medida</option>
+              <option>Aún no lo sé</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+          <!-- En España (RGPD) hay que informar de qué se hace con los datos antes de enviarlos -->
+          <label class="consentimiento">
+            <input type="checkbox" name="acepta_privacidad" required>
+            <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span>
+          </label>
+          <!-- Campo trampa contra bots: invisible para personas; si se rellena, Formspree lo descarta -->
+          <input type="text" name="_gotcha" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="boton boton--principal boton--ancho">Pedir mi demo</button>
+          <p class="formulario__estado" id="formulario-estado" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIE ============ -->
+  <footer class="pie">
+    <div class="contenedor pie__grid">
+      <a href="#inicio" class="marca marca--clara" aria-label="Kryonix, ir al inicio">
+        <img src="img/logo-oscuro.svg" alt="" width="30" height="30">
+        <span class="marca__nombre">Kryoni<span class="marca__x">x</span></span>
+      </a>
+      <span>Software de gestión para negocios</span>
+      <nav aria-label="Pie de página">
+        <a href="#productos">Productos</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Privacidad</a>
+      </nav>
+      <!-- El año lo pone el JS para no tener que cambiarlo cada enero -->
+      <small>© <span id="anio">2026</span> Kryonix</small>
+    </div>
+  </footer>
+</body>
+</html>

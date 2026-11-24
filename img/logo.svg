@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Kryonix">
+  <!-- Cubo: tres caras de distinto tono para dar sensación de 3D -->
+  <polygon points="50,8 88,28 50,48 12,28" fill="#2A3550"/>
+  <polygon points="12,28 50,48 50,94 12,74" fill="#1A2338"/>
+  <polygon points="50,48 88,28 88,74 50,94" fill="#111827"/>
+  <!-- K: dibujada recta en 100x100 y "pegada" a la cara izquierda con matrix() -->
+  <g transform="matrix(0.38 0.2 0 0.46 12 28)" fill="#F8FAFC">
+    <rect x="22" y="18" width="16" height="64"/>
+    <polygon points="38,48 62,18 82,18 38,73"/>
+    <polygon points="56.4,50 84,82 64,82 46.4,62.5"/>
+  </g>
+  <!-- x: igual, en la cara derecha -->
+  <g transform="matrix(0.38 -0.2 0 0.46 50 48)" fill="#D9822B">
+    <polygon points="24,22 40,22 76,78 60,78"/>
+    <polygon points="60,22 76,22 40,78 24,78"/>
+  </g>
+</svg>

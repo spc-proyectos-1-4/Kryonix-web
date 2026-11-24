@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Versión simplificada para 16-32 px: sin la K, que no se distingue tan pequeña -->
+  <polygon points="50,6 92,28 50,50 8,28" fill="#2A3550"/>
+  <polygon points="8,28 50,50 50,96 8,74" fill="#1A2338"/>
+  <polygon points="50,50 92,28 92,74 50,96" fill="#111827"/>
+  <g transform="matrix(0.42 -0.22 0 0.46 50 50)" fill="#D9822B">
+    <polygon points="16,14 40,14 84,86 60,86"/>
+    <polygon points="60,14 84,14 40,86 16,86"/>
+  </g>
+</svg>
