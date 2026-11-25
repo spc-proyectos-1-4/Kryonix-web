@@ -8,7 +8,22 @@
 /* ---------- 1. VARIABLES ----------
    Guardamos colores, tamaños y radios en un solo sitio. Si mañana cambia el
    azul de la marca, se cambia aquí y se actualiza en toda la web. */
-:root {
+/* Fuentes alojadas en nuestra web (no en Google) */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../fonts/space-grotesk.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+   :root {
   --tinta: #0E1726;          /* texto principal y fondos oscuros */
   --tinta-suave: #4A5568;    /* texto secundario (contraste 7:1 sobre blanco) */
   --fondo: #F5F7FA;          /* fondo gris muy claro */
@@ -629,3 +644,42 @@ a:hover { color: var(--azul-oscuro); }
 .legal h1 { font-size: 2.4rem; margin-top: 24px; }
 .legal h2 { font-size: 1.25rem; margin-top: 16px; }
 .legal p { color: var(--tinta-suave); }
+
+/* --- Quiénes somos --- */
+/* Va justo después de "Cómo trabajamos", con el mismo fondo: le quitamos el
+   espacio de arriba para que no quede un hueco doble entre las dos */
+.seccion--seguida { padding-top: 0; }
+.nosotros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: 48px;
+  align-items: center;
+}
+.nosotros__texto { display: flex; flex-direction: column; gap: 16px; }
+.nosotros__texto .antetitulo { margin-bottom: 0; }
+.nosotros__texto p { color: var(--tinta-suave); font-size: 1.1rem; }
+.equipo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.persona {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  padding: 28px 16px;
+}
+.persona__foto {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;           /* un cuadrado con radio del 50 % es un círculo */
+  object-fit: cover;            /* si es una foto, la recorta sin deformarla */
+  display: grid;
+  place-items: center;
+  background: var(--tinta);
+  color: var(--blanco);
+  font: 700 2rem var(--fuente-titulos);
+  margin-bottom: 8px;
+}
+.persona p { font-size: .9rem; color: var(--tinta-suave); }

@@ -27,8 +27,6 @@ Cada archivo hace una sola cosa: el HTML dice **qué hay**, el CSS **cómo se ve
 ## Qué falta antes de publicarla
 
 - [ ] **Precios**: buscad `[PRECIO]` en `index.html`. En los planes hay que cambiar también los atributos `data-mensual` y `data-anual`.
-- [ ] **Contacto**: buscad `equipo.kryonix@gmail.com` y `+34 722 424 912 / +34 649 871 116`.
-- [ ] **Formulario**: cread una cuenta gratis en https://formspree.io, cread un formulario y cambiad `TU_ID_DE_FORMSPREE` en el `action` del `<form>` por vuestro id. Los mensajes os llegarán al email.
 - [ ] **Páginas legales**: completad los `[DATOS]` de `privacidad.html` y `aviso-legal.html` y revisadlas con vuestro gestor. Son obligatorias en España si la web recoge datos (RGPD y LSSI).
 - [ ] **Frase "respondemos en un día laborable"**: confirmad que la podéis cumplir.
 
